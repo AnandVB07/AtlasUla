@@ -1,0 +1,95 @@
+{
+  "uid": "demo_user_123",
+  "email": "demo@atlasula.ai",
+  "displayName": "Test",
+  "photoURL": "https://api.dicebear.com/7.x/adventurer/svg?seed=demo_rgmy2b5",
+  "travelLevel": "Explorer",
+  "xp": 100,
+  "streak": 1,
+  "lastActiveDate": "2026-08-26",
+  "countriesVisited": [],
+  "citiesVisited": [],
+  "tripsCompleted": 0,
+  "achievements": [
+    {
+      "id": "first_trip",
+      "title": "First Trip",
+      "description": "Create your first travel itinerary",
+      "icon": "Compass",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 1,
+      "unlocked": false
+    },
+    {
+      "id": "budget_master",
+      "title": "Budget Master",
+      "description": "Keep your expenses under budget on a trip",
+      "icon": "DollarSign",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 1,
+      "unlocked": false
+    },
+    {
+      "id": "packing_pro",
+      "title": "Packing Pro",
+      "description": "Pack all items on your checklist",
+      "icon": "Briefcase",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 1,
+      "unlocked": false
+    },
+    {
+      "id": "food_explorer",
+      "title": "Food Explorer",
+      "description": "Log 3 dining experiences in your journal",
+      "icon": "Utensils",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 3,
+      "unlocked": false
+    },
+    {
+      "id": "adventure_seeker",
+      "title": "Adventure Seeker",
+      "description": "Create an itinerary with adventure focus",
+      "icon": "Zap",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 1,
+      "unlocked": false
+    },
+    {
+      "id": "solo_traveler",
+      "title": "Solo Traveler",
+      "description": "Plan a solo trip",
+      "icon": "User",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 1,
+      "unlocked": false
+    },
+    {
+      "id": "weekend_warrior",
+      "title": "Weekend Warrior",
+      "description": "Plan a short trip of 3 days or less",
+      "icon": "Calendar",
+      "unlockedAt": null,
+      "progress": 0,
+      "maxProgress": 1,
+      "unlocked": false
+    },
+    {
+      "id": "streak_explorer",
+      "title": "Streak Explorer",
+      "description": "Log in 5 days in a row",
+      "icon": "Flame",
+      "unlockedAt": null,
+      "progress": 1,
+      "maxProgress": 5,
+      "unlocked": false
+    }
+  ]
+}
