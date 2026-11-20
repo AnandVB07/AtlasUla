@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button, Input } from '../components/UI';
-import { 
-  Wallet, 
-  Plus, 
-  Trash2, 
-  PieChart as ChartIcon, 
-  ArrowRight,
-  TrendingDown,
-  Sparkles,
-  AlertCircle,
-  HelpCircle,
-  PiggyBank
+import {
+PieChart as ChartIcon,
+PiggyBank,
+Plus,
+Sparkles,
+Trash2,
+TrendingDown,
+Wallet
 } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
-import { Trip, Expense, BudgetAllocation } from '../types';
-import { tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useLocation } from 'react-router-dom';
+import { Cell,Pie,PieChart,ResponsiveContainer,Tooltip } from 'recharts';
+import { Button,Card,Input } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
+import { tripService } from '../services/api';
+import { Expense,Trip } from '../types';
 
 export const BudgetPlanner: React.FC = () => {
   const { user, gainXP } = useAuth();
@@ -346,7 +343,7 @@ export const BudgetPlanner: React.FC = () => {
                           paddingAngle={3}
                           dataKey="value"
                         >
-                          {chartData.map((entry, index) => (
+                          {chartData.map((_entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                           ))}
                         </Pie>

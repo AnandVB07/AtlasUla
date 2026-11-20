@@ -1,5 +1,5 @@
-import { initializeApp, getApp, getApps } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getApp,getApps,initializeApp } from 'firebase/app';
+import { getAuth,GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
@@ -37,4 +37,4 @@ if (isConfigured) {
   );
 }
 
-export { app, auth, db, storage, googleProvider, isConfigured };
+export { app,auth,db,googleProvider,isConfigured,storage };

@@ -1,20 +1,20 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { 
-  Plane, 
-  LayoutDashboard, 
-  Compass, 
-  Wallet, 
-  Bed, 
-  Utensils, 
-  Briefcase, 
-  CloudSun, 
-  BookOpen, 
-  ShieldCheck, 
-  User, 
-  Settings 
+import {
+Bed,
+BookOpen,
+Briefcase,
+CloudSun,
+Compass,
+LayoutDashboard,
+Plane,
+Settings,
+ShieldCheck,
+User,
+Utensils,
+Wallet
 } from 'lucide-react';
+import React from 'react';
+import { NavLink,useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export const Sidebar: React.FC = () => {
   const { profile } = useAuth();

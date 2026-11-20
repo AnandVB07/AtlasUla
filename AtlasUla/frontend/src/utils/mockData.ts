@@ -1,4 +1,4 @@
-import { Hotel, Restaurant, UserAchievement, JournalEntry, Trip, WeatherReport } from '../types';
+import { Hotel,JournalEntry,Restaurant,Trip,UserAchievement,WeatherReport } from '../types';
 
 export const MOCK_ACHIEVEMENTS: UserAchievement[] = [
   {

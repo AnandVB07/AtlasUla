@@ -1,16 +1,14 @@
-import React from 'react';
-import { Trip } from '../types';
-import { Card, Button } from './UI';
-import { 
-  Calendar, 
-  MapPin, 
-  Trash2, 
-  Sparkles, 
-  Navigation,
-  ArrowRight,
-  TrendingDown
+import {
+Calendar,
+MapPin,
+Navigation,
+Trash2,
+TrendingDown
 } from 'lucide-react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Trip } from '../types';
+import { Button,Card } from './UI';
 
 interface TripCardProps {
   trip: Trip;

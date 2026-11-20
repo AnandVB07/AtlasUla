@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { MessageSquare,SendHorizontal,Sparkles,X } from 'lucide-react';
+import React,{ useEffect,useRef,useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Card, Button } from './UI';
-import { MessageSquare, X, Send, Sparkles, SendHorizontal } from 'lucide-react';
-import { chatService, tripService } from '../services/api';
+import { chatService,tripService } from '../services/api';
 import { Trip } from '../types';
+import { Card } from './UI';
 
 export const FloatingAI: React.FC = () => {
   const { user } = useAuth();

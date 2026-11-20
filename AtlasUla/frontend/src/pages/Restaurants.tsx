@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button } from '../components/UI';
-import { 
-  Utensils, 
-  Star, 
-  MapPin, 
-  Heart, 
-  ShieldCheck, 
-  Sparkles,
-  ExternalLink,
-  ChevronRight,
-  Flame,
-  Check
+import {
+ChevronRight,
+Flame,
+Heart,
+MapPin,
+Star,
+Utensils
 } from 'lucide-react';
-import { MOCK_RESTAURANTS } from '../utils/mockData';
-import { Restaurant, Trip } from '../types';
-import { tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Button,Card } from '../components/UI';
+import { tripService } from '../services/api';
+import { Restaurant,Trip } from '../types';
+import { MOCK_RESTAURANTS } from '../utils/mockData';
 
 export const Restaurants: React.FC = () => {
   const [trips, setTrips] = useState<Trip[]>([]);

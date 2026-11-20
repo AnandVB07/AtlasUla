@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button } from '../components/UI';
-import { WeatherCard } from '../components/WeatherCard';
-import { 
-  Search, 
-  MapPin, 
-  Sparkles, 
-  AlertCircle,
-  Clock,
-  Compass
+import {
+AlertCircle,
+Clock,
+Compass,
+Search,
+Sparkles
 } from 'lucide-react';
-import { MOCK_WEATHER } from '../utils/mockData';
-import { WeatherReport, Trip } from '../types';
-import { tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Button,Card } from '../components/UI';
+import { WeatherCard } from '../components/WeatherCard';
+import { tripService } from '../services/api';
+import { Trip,WeatherReport } from '../types';
+import { MOCK_WEATHER } from '../utils/mockData';
 
 export const Weather: React.FC = () => {
   const [trips, setTrips] = useState<Trip[]>([]);

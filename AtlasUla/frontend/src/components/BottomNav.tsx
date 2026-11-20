@@ -1,12 +1,12 @@
+import {
+BookOpen,
+Briefcase,
+Compass,
+LayoutDashboard,
+Wallet
+} from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Compass, 
-  Wallet, 
-  Briefcase, 
-  BookOpen 
-} from 'lucide-react';
 
 export const BottomNav: React.FC = () => {
   const navItems = [

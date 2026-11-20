@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button } from '../components/UI';
-import { TripCard } from '../components/TripCard';
-import { WeatherCard } from '../components/WeatherCard';
-import { 
-  Plus, 
-  TrendingUp, 
-  Flame, 
-  MapPin, 
-  Award, 
-  Sparkles, 
-  Wallet, 
-  Clock,
-  Compass,
-  Briefcase,
-  ShieldCheck,
-  BookOpen
+import {
+Award,
+BookOpen,
+Briefcase,
+Clock,
+Compass,
+Flame,
+MapPin,
+Plus,
+ShieldCheck,
+Sparkles,
+TrendingUp,
+Wallet
 } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { MOCK_WEATHER } from '../utils/mockData';
-import { Trip, WeatherReport } from '../types';
-import { tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { Bar,BarChart,Cell,ResponsiveContainer,Tooltip,XAxis,YAxis } from 'recharts';
+import { TripCard } from '../components/TripCard';
+import { Button,Card } from '../components/UI';
+import { WeatherCard } from '../components/WeatherCard';
+import { useAuth } from '../context/AuthContext';
+import { tripService } from '../services/api';
+import { Trip,WeatherReport } from '../types';
+import { MOCK_WEATHER } from '../utils/mockData';
 
 export const Dashboard: React.FC = () => {
   const { profile, user, updateStreak } = useAuth();
@@ -322,7 +322,7 @@ export const Dashboard: React.FC = () => {
                           formatter={(value) => [`$${value}`, 'Amount Spent']}
                         />
                         <Bar dataKey="amount" radius={[8, 8, 0, 0]}>
-                          {chartData.map((entry, index) => (
+                          {chartData.map((_entry, index) => (
                             <Cell key={`cell-${index}`} fill={chartColors[index % chartColors.length]} />
                           ))}
                         </Bar>

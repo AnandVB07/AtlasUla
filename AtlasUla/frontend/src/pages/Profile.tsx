@@ -1,24 +1,23 @@
-import React from 'react';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button } from '../components/UI';
-import { 
-  Award, 
-  Flame, 
-  MapPin, 
-  Map, 
-  Globe, 
-  CheckCircle,
-  Clock,
-  LogOut,
-  Compass,
-  Zap,
-  DollarSign,
-  Briefcase,
-  Utensils,
-  User,
-  Calendar
+import {
+Award,
+Briefcase,
+Calendar,
+CheckCircle,
+Compass,
+DollarSign,
+Flame,
+Globe,
+LogOut,
+Map,
+MapPin,
+User,
+Utensils,
+Zap
 } from 'lucide-react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button,Card } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
 
 export const Profile: React.FC = () => {
   const { profile, logout } = useAuth();

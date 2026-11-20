@@ -1,8 +1,8 @@
-import React from 'react';
-import { Card } from './UI';
-import { Award, CheckCircle } from 'lucide-react';
 import * as Icons from 'lucide-react';
+import { Award,CheckCircle } from 'lucide-react';
+import React from 'react';
 import { UserAchievement } from '../types';
+import { Card } from './UI';
 
 interface AchievementCardProps {
   achievement: UserAchievement;

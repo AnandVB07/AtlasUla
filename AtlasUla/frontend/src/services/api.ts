@@ -1,14 +1,21 @@
 import axios from 'axios';
-import { Trip, Expense, PackingItem, JournalEntry, UserProfile } from '../types';
-import { MOCK_TRIPS, MOCK_WEATHER } from '../utils/mockData';
+import { Expense,JournalEntry,PackingItem,Trip,UserProfile } from '../types';
+import { MOCK_TRIPS } from '../utils/mockData';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 const client = axios.create({
   baseURL: BASE_URL,
+  timeout: 8000,
   headers: {
     'Content-Type': 'application/json'
   }
+});
+
+// Use the existing local demo immediately when no API is configured.
+client.interceptors.request.use((config) => {
+  if (!import.meta.env.VITE_API_URL) return Promise.reject(new Error('Local demo mode'));
+  return config;
 });
 
 // ==========================================

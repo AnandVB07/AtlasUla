@@ -1,26 +1,26 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { Sidebar } from './components/Sidebar';
+import { QueryClient,QueryClientProvider } from '@tanstack/react-query';
+import React,{ lazy,Suspense } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { BrowserRouter,Navigate,Route,Routes,useLocation } from 'react-router-dom';
 import { BottomNav } from './components/BottomNav';
 import { FloatingAI } from './components/FloatingAI';
-import { Toaster } from 'react-hot-toast';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Sidebar } from './components/Sidebar';
+import { AuthProvider,useAuth } from './context/AuthContext';
 
 // Pages
-import LandingPage from './pages/LandingPage';
-import Auth from './pages/Auth';
-import Dashboard from './pages/Dashboard';
-import TripPlanner from './pages/TripPlanner';
-import BudgetPlanner from './pages/BudgetPlanner';
-import Hotels from './pages/Hotels';
-import Restaurants from './pages/Restaurants';
-import PackingAssistant from './pages/PackingAssistant';
-import Weather from './pages/Weather';
-import TravelJournal from './pages/TravelJournal';
-import SafetyCenter from './pages/SafetyCenter';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const Auth = lazy(() => import('./pages/Auth'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const TripPlanner = lazy(() => import('./pages/TripPlanner'));
+const BudgetPlanner = lazy(() => import('./pages/BudgetPlanner'));
+const Hotels = lazy(() => import('./pages/Hotels'));
+const Restaurants = lazy(() => import('./pages/Restaurants'));
+const PackingAssistant = lazy(() => import('./pages/PackingAssistant'));
+const Weather = lazy(() => import('./pages/Weather'));
+const TravelJournal = lazy(() => import('./pages/TravelJournal'));
+const SafetyCenter = lazy(() => import('./pages/SafetyCenter'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Settings = lazy(() => import('./pages/Settings'));
 
 const queryClient = new QueryClient();
 
@@ -96,7 +96,7 @@ export const App: React.FC = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthProvider>
-          <AppLayout />
+          <Suspense fallback={<div className="min-h-screen grid place-items-center text-textSecondary" role="status">Loading AtlasUla…</div>}><AppLayout /></Suspense>
           <Toaster 
             position="top-right"
             toastOptions={{

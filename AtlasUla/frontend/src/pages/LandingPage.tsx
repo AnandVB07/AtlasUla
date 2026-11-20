@@ -1,20 +1,17 @@
+import {
+
+Award,
+BrainCircuit,
+CloudSun,
+DollarSign,
+Plane,
+ShieldCheck,
+Sparkles
+} from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button,Card } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
-import { Button, Card } from '../components/UI';
-import { 
-  Plane, 
-  Sparkles, 
-  MapPin, 
-  DollarSign, 
-  ShieldCheck, 
-  Award,
-  Compass,
-  ArrowRight,
-  TrendingUp,
-  BrainCircuit,
-  CloudSun
-} from 'lucide-react';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -59,7 +56,7 @@ export const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-6 pt-16 pb-20 text-center relative z-10 flex flex-col items-center">
         {/* Tag Pill */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] font-bold text-accent uppercase tracking-widest mb-6 animate-pulse-glow">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/5 text-sm font-bold text-accent uppercase tracking-widest mb-6 animate-pulse-glow">
           <Sparkles className="w-3.5 h-3.5" /> Introducing AtlasUla
         </div>
 
@@ -70,7 +67,7 @@ export const LandingPage: React.FC = () => {
 
         {/* Tagline */}
         <p className="text-sm sm:text-base text-textSecondary mt-6 max-w-2xl leading-relaxed">
-          Gamify your excursions. Plan weather-aware itineraries with Gemini, monitor budgets, check safety indicators, and save travel scrapbooks.
+          Make room for the adventure. Bring your itinerary, budget, packing list, and travel memories together in one beautiful place.
         </p>
 
         {/* Hero Action Buttons */}
@@ -81,7 +78,7 @@ export const LandingPage: React.FC = () => {
             onClick={handleStartPlanning}
             className="gap-2 text-background font-bold px-8 cursor-pointer"
           >
-            Start Planning Now <ArrowRight className="w-5 h-5" />
+            Start Planning Now
           </Button>
           <Button 
             variant="outline" 
@@ -105,16 +102,17 @@ export const LandingPage: React.FC = () => {
             <div className="w-2.5 h-2.5 rounded-full bg-success" />
           </div>
 
+          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="Colorful coastal villages along the Italian Riviera" className="absolute inset-0 w-full h-full object-cover opacity-65" loading="lazy" width="1200" height="750" />
           {/* Interactive Screen Preview */}
-          <div className="p-8 flex flex-col justify-between h-full bg-gradient-to-br from-card/80 to-primary/5 select-none relative pt-12">
+          <div className="p-8 flex flex-col justify-between h-full bg-gradient-to-br from-card/60 to-background/70 select-none relative pt-12">
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
               <div className="text-left space-y-1.5">
-                <span className="text-[10px] text-accent uppercase tracking-widest font-sora font-semibold">Active Itinerary Match</span>
-                <h3 className="text-lg font-bold text-white font-sora">✈️ Summer Excursion: Tokyo, Japan</h3>
-                <p className="text-[10px] text-textSecondary">Day 1: Shibuya Crossing & Ramen Crawl</p>
+                <span className="text-sm text-accent uppercase tracking-widest font-sora font-semibold">Active Itinerary Match</span>
+                <h3 className="text-lg font-bold text-white font-sora">✈️ Summer Escape: Cinque Terre, Italy</h3>
+                <p className="text-sm text-textSecondary">Day 1: Coastal trails & seaside dining</p>
               </div>
 
-              <div className="flex gap-2 bg-white/5 border border-white/10 p-1 rounded-xl text-[10px] font-semibold text-textSecondary">
+              <div className="flex gap-2 bg-white/5 border border-white/10 p-1 rounded-xl text-sm font-semibold text-textSecondary">
                 <span className="px-2.5 py-1 bg-primary text-white rounded-lg">Itinerary</span>
                 <span className="px-2.5 py-1">Budgets</span>
                 <span className="px-2.5 py-1">SOS</span>
@@ -124,15 +122,15 @@ export const LandingPage: React.FC = () => {
             {/* Bottom Floating Stats */}
             <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4 text-left">
               <div>
-                <span className="text-[9px] text-textSecondary uppercase font-semibold">Lodging Allocated</span>
+                <span className="text-xs text-textSecondary uppercase font-semibold">Lodging Allocated</span>
                 <p className="text-xs font-bold text-white mt-0.5">$650.00 / $1200</p>
               </div>
               <div>
-                <span className="text-[9px] text-textSecondary uppercase font-semibold">Weather Outlook</span>
+                <span className="text-xs text-textSecondary uppercase font-semibold">Weather Outlook</span>
                 <p className="text-xs font-bold text-warning flex items-center gap-1 mt-0.5"><CloudSun className="w-3.5 h-3.5" /> 26° Sunny</p>
               </div>
               <div>
-                <span className="text-[9px] text-textSecondary uppercase font-semibold">Gamification Score</span>
+                <span className="text-xs text-textSecondary uppercase font-semibold">Gamification Score</span>
                 <p className="text-xs font-bold text-accent mt-0.5">Lv. 3 Globetrotter</p>
               </div>
             </div>
@@ -151,25 +149,25 @@ export const LandingPage: React.FC = () => {
           <Card variant="solid" className="p-5 bg-card/60 border-white/5 space-y-3 hover:border-primary/20 transition-all duration-300">
             <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-primary-light"><BrainCircuit className="w-5 h-5" /></div>
             <h3 className="text-xs font-bold text-white font-sora">Gemini AI Planner</h3>
-            <p className="text-[10px] text-textSecondary leading-relaxed">Generates high-fidelity daily itineraries containing detailed sightseeing, dinings, costs, and backup alternatives.</p>
+            <p className="text-sm text-textSecondary leading-relaxed">Generates high-fidelity daily itineraries containing detailed sightseeing, dinings, costs, and backup alternatives.</p>
           </Card>
 
           <Card variant="solid" className="p-5 bg-card/60 border-white/5 space-y-3 hover:border-primary/20 transition-all duration-300">
             <div className="w-9 h-9 rounded-lg bg-accent/20 flex items-center justify-center text-accent"><DollarSign className="w-5 h-5" /></div>
             <h3 className="text-xs font-bold text-white font-sora">Category Auditor</h3>
-            <p className="text-[10px] text-textSecondary leading-relaxed">Log expense transactions, divide budgets into lodging, transit, and food, and audit items using AI.</p>
+            <p className="text-sm text-textSecondary leading-relaxed">Log expense transactions, divide budgets into lodging, transit, and food, and audit items using AI.</p>
           </Card>
 
           <Card variant="solid" className="p-5 bg-card/60 border-white/5 space-y-3 hover:border-primary/20 transition-all duration-300">
             <div className="w-9 h-9 rounded-lg bg-warning/20 flex items-center justify-center text-warning"><Award className="w-5 h-5" /></div>
             <h3 className="text-xs font-bold text-white font-sora">Gamified XP</h3>
-            <p className="text-[10px] text-textSecondary leading-relaxed">Complete itineraries, check off packing items, and keep login streaks to unlock travel badges and level ratings.</p>
+            <p className="text-sm text-textSecondary leading-relaxed">Complete itineraries, check off packing items, and keep login streaks to unlock travel badges and level ratings.</p>
           </Card>
 
           <Card variant="solid" className="p-5 bg-card/60 border-white/5 space-y-3 hover:border-primary/20 transition-all duration-300">
             <div className="w-9 h-9 rounded-lg bg-success/20 flex items-center justify-center text-success"><ShieldCheck className="w-5 h-5" /></div>
             <h3 className="text-xs font-bold text-white font-sora">Safety Center</h3>
-            <p className="text-[10px] text-textSecondary leading-relaxed">Review location danger ratings, check emergency details, and protect credentials in the vault.</p>
+            <p className="text-sm text-textSecondary leading-relaxed">Review location danger ratings, check emergency details, and protect credentials in the vault.</p>
           </Card>
         </div>
       </section>

@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button, Input } from '../components/UI';
-import { 
-  ShieldAlert, 
-  Phone, 
-  FolderLock, 
-  Eye, 
-  EyeOff, 
-  Plus, 
-  Trash2, 
-  MapPin, 
-  ExternalLink,
-  Flame
+import {
+Eye,
+EyeOff,
+FolderLock,
+Phone,
+ShieldAlert,
+Trash2
 } from 'lucide-react';
-import { Trip } from '../types';
-import { tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Button,Card } from '../components/UI';
+import { tripService } from '../services/api';
+import { Trip } from '../types';
 
 export const SafetyCenter: React.FC = () => {
   const [trips, setTrips] = useState<Trip[]>([]);

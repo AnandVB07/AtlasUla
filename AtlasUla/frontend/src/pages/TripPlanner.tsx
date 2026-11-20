@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button, Input } from '../components/UI';
-import { 
-  Compass, 
-  MapPin, 
-  DollarSign, 
-  Calendar, 
-  Sparkles, 
-  ChevronDown, 
-  ChevronUp, 
-  ShieldAlert, 
-  Heart,
-  Plane,
-  AlertCircle,
-  Clock,
-  ExternalLink,
-  Save,
-  RotateCcw
+import {
+Calendar,
+ChevronDown,
+ChevronUp,
+Clock,
+Compass,
+ExternalLink,
+MapPin,
+RotateCcw,
+Save,
+ShieldAlert,
+Sparkles
 } from 'lucide-react';
-import { tripService } from '../services/api';
-import { Trip, DayItinerary, PackingItem, Expense, BudgetAllocation } from '../types';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useLocation,useNavigate } from 'react-router-dom';
+import { Button,Card } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
+import { tripService } from '../services/api';
+import { BudgetAllocation,DayItinerary,Expense,Trip } from '../types';
 
 export const TripPlanner: React.FC = () => {
-  const { user, gainXP, unlockAchievement } = useAuth();
+  const { gainXP, unlockAchievement } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 

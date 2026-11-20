@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button, Input } from '../components/UI';
-import { Plane, Compass, Lock, Mail, User, Shield, Sparkles } from 'lucide-react';
+import { Lock,Mail,Plane,Sparkles,User } from 'lucide-react';
+import React,{ useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useLocation,useNavigate } from 'react-router-dom';
+import { Button,Card } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
 
 export const Auth: React.FC = () => {
-  const { login, signup, loginWithGoogle, resetPassword } = useAuth();
+  const { login, signup, loginWithGoogle, resetPassword, isDemo } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -110,6 +110,10 @@ export const Auth: React.FC = () => {
             </p>
           </div>
 
+          {isDemo && <div className="mb-6 space-y-3">
+            <p className="text-sm text-textSecondary text-center">Explore sample trips. Your changes are saved in this browser.</p>
+            <Button fullWidth onClick={async () => { setLoading(true); try { await login('guest@atlasula.local', ''); navigate(from, { replace: true }); } finally { setLoading(false); } }} disabled={loading}>Explore demo</Button>
+          </div>}
           <form onSubmit={handleSubmit} className="space-y-4">
             {!isLogin && !isForgotPassword && (
               <div className="space-y-1.5">
@@ -220,7 +224,7 @@ export const Auth: React.FC = () => {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                   />
                 </svg>
-                Google Authentication
+                {isDemo ? 'Continue with demo profile' : 'Google Authentication'}
               </button>
             </div>
           )}

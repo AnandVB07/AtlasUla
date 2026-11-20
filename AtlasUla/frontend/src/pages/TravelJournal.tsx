@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button, Input } from '../components/UI';
-import { 
-  BookOpen, 
-  Plus, 
-  Trash2, 
-  Sparkles, 
-  FileText,
-  Calendar,
-  Smile,
-  Image as ImageIcon,
-  Check,
-  ChevronRight
+import {
+Calendar,
+FileText,
+Image as ImageIcon,
+Plus,
+Sparkles,
+Trash2
 } from 'lucide-react';
-import { JournalEntry, Trip } from '../types';
-import { journalService, tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Button,Card,Input } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
+import { journalService,tripService } from '../services/api';
+import { JournalEntry,Trip } from '../types';
 
 export const TravelJournal: React.FC = () => {
   const { user, gainXP, unlockAchievement } = useAuth();

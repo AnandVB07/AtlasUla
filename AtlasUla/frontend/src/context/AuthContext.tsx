@@ -1,18 +1,18 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword, 
-  signOut, 
-  signInWithPopup, 
-  sendPasswordResetEmail,
-  onAuthStateChanged,
-  User
-} from 'firebase/auth';
-import { auth, googleProvider, isConfigured } from '../firebase';
-import { UserProfile, Trip } from '../types';
-import { profileService } from '../services/api';
 import confetti from 'canvas-confetti';
+import {
+createUserWithEmailAndPassword,
+onAuthStateChanged,
+sendPasswordResetEmail,
+signInWithEmailAndPassword,
+signInWithPopup,
+signOut,
+User
+} from 'firebase/auth';
+import React,{ createContext,useContext,useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { auth,googleProvider,isConfigured } from '../firebase';
+import { profileService } from '../services/api';
+import { Trip,UserProfile } from '../types';
 
 interface AuthContextType {
   user: User | { email: string; displayName: string; photoURL: string; uid: string } | null;

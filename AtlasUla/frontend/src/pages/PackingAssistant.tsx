@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Card, Button, Input } from '../components/UI';
-import { 
-  Briefcase, 
-  Plus, 
-  Trash2, 
-  CheckSquare, 
-  Square,
-  Sparkles,
-  AlertCircle,
-  HelpCircle,
-  CheckCircle2
+import {
+Briefcase,
+CheckCircle2,
+CheckSquare,
+Plus,
+Sparkles,
+Square,
+Trash2
 } from 'lucide-react';
-import { Trip, PackingItem } from '../types';
-import { tripService } from '../services/api';
+import React,{ useEffect,useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useLocation } from 'react-router-dom';
+import { Button,Card,Input } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
+import { tripService } from '../services/api';
+import { PackingItem,Trip } from '../types';
 
 export const PackingAssistant: React.FC = () => {
   const { user, gainXP, unlockAchievement } = useAuth();

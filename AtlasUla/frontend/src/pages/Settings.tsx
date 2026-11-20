@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import { Card, Button, Input } from '../components/UI';
-import { useAuth } from '../context/AuthContext';
-import { 
-  User, 
-  Trash2, 
-  Sparkles, 
-  AlertTriangle,
-  FolderSync
+import {
+AlertTriangle,
+FolderSync,
+Trash2,
+User
 } from 'lucide-react';
-import { profileService } from '../services/api';
+import React,{ useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Button,Card,Input } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
+import { profileService } from '../services/api';
 
 export const Settings: React.FC = () => {
   const { profile, isDemo, logout } = useAuth();

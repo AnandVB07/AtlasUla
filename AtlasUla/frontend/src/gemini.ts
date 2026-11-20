@@ -213,9 +213,9 @@ function generateMockTrip(
   destination: string,
   days: number,
   budgetTier: 'budget' | 'moderate' | 'luxury',
-  travelType: string,
+  _travelType: string,
   interests: string[],
-  travelStyle: string
+  _travelStyle: string
 ): any {
   const normDest = destination.toLowerCase();
   

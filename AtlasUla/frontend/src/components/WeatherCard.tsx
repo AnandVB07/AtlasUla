@@ -1,15 +1,15 @@
+import {
+Cloud,
+CloudLightning,
+CloudRain,
+CloudSun,
+Droplets,
+Sun,
+Wind
+} from 'lucide-react';
 import React from 'react';
 import { WeatherReport } from '../types';
 import { Card } from './UI';
-import { 
-  Sun, 
-  Cloud, 
-  CloudSun, 
-  CloudRain, 
-  Droplets, 
-  Wind, 
-  CloudLightning 
-} from 'lucide-react';
 
 interface WeatherCardProps {
   weather: WeatherReport;
